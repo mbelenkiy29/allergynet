@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom font faces */
+@font-face {
+  font-family: 'Exposure';
+  src: url('https://ext.same-assets.com/1285281425/3667781896.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Exposure';
+  src: url('https://ext.same-assets.com/1285281425/613643934.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 48 33% 97%;
+    --foreground: 12 20% 14%;
+    --card: 48 33% 97%;
+    --card-foreground: 12 20% 14%;
+    --popover: 48 33% 97%;
+    --popover-foreground: 12 20% 14%;
+    --primary: 12 20% 14%;
+    --primary-foreground: 48 33% 97%;
+    --secondary: 55 70% 90%;
+    --secondary-foreground: 12 20% 14%;
+    --muted: 48 20% 92%;
+    --muted-foreground: 12 10% 40%;
+    --accent: 55 70% 85%;
+    --accent-foreground: 12 20% 14%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 12 10% 85%;
+    --input: 12 10% 85%;
+    --ring: 12 20% 14%;
+    --radius: 0.5rem;
+
+    /* Custom Heidi colors */
+    --heidi-cream: #faf8f4;
+    --heidi-cream-dark: #f5f3ef;
+    --heidi-brown: #2a1d1f;
+    --heidi-brown-light: #564841;
+    --heidi-yellow: #f9f7a4;
+    --heidi-yellow-light: #fbf9ed;
+    --heidi-yellow-dark: #f5f2a0;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-[var(--heidi-cream)] text-[var(--heidi-brown)];
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Exposure', Georgia, serif;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--heidi-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--heidi-brown-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--heidi-brown);
+}
