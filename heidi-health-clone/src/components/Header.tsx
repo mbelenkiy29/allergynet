@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { ChevronDown, Menu, X, Microscope, ClipboardList, HeartPulse, Syringe, HelpCircle, Newspaper, BookOpen, Users, Phone } from "lucide-react";
 
 const platformItems = [
@@ -89,14 +88,11 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <Link href="/" className="flex items-center">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/nationwide-allergy-logo.png"
                 alt="Nationwide Allergy"
-                width={220}
-                height={36}
-                style={{ width: "auto", height: "36px" }}
-                className="object-contain"
-                priority
+                style={{ height: "36px", width: "auto" }}
               />
             </Link>
 
