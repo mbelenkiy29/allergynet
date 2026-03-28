@@ -27,7 +27,7 @@ const steps = [
     title: "Testing",
     subtitle: "Custom-tailored testing designed around your practice.",
     description:
-      "Nationwide Allergy will help your office choose the best possible testing program for you and your patients. Our team of experts guides you through the process from beginning to end. We know your patients come first, and we can help design a program that is custom-tailored to your needs — whether that's a small primary care office or a larger multi-provider practice.",
+      "Nationwide Allergy will help your office choose the best possible testing program for you and your patients. Our team of experts guides you through the process from beginning to end. We know your patients come first, and we can help design a program that is custom-tailored to your needs, whether that's a small primary care office or a larger multi-provider practice.",
     details: [
       "Nationwide Allergy experts guide your office through every step",
       "Testing protocols custom-tailored to your patient population",
