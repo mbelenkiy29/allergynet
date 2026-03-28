@@ -18,6 +18,7 @@ const steps = [
       "Simple, standardized questionnaire provided by Nationwide Allergy",
       "Requires no additional equipment or staff training to begin",
     ],
+    image: "/simple-screening-test.avif",
     color: "from-sky-50 to-sky-100",
     accent: "bg-sky-500",
   },
@@ -134,6 +135,14 @@ export default function OurServicesPage() {
 
                   {/* Content side */}
                   <div className={`p-10 md:p-16 flex flex-col justify-center ${isEven ? "md:order-1" : ""}`}>
+                    {"image" in step && step.image && (
+                      <img
+                        src={step.image}
+                        alt={step.title}
+                        className="w-full rounded-2xl object-cover mb-6 shadow-sm"
+                        style={{ maxHeight: "220px" }}
+                      />
+                    )}
                     <p className="text-[#564841] text-lg leading-relaxed mb-8">
                       {step.description}
                     </p>
