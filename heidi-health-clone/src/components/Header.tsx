@@ -5,10 +5,10 @@ import Link from "next/link";
 import { ChevronDown, Menu, X, Microscope, ClipboardList, HeartPulse, Syringe, HelpCircle, Newspaper, BookOpen, Users, Phone } from "lucide-react";
 
 const platformItems = [
-  { name: "Screening", description: "Identify allergy candidates quickly", icon: ClipboardList, href: "#" },
-  { name: "Testing", description: "Precision allergy testing programs", icon: Microscope, href: "#" },
-  { name: "Treatment", description: "Sublingual & subcutaneous options", icon: Syringe, href: "#" },
-  { name: "Immunity & Health", description: "Long-term patient wellness", icon: HeartPulse, href: "#" },
+  { name: "Screening", description: "Identify allergy candidates quickly", icon: ClipboardList, href: "/our-services#screening" },
+  { name: "Testing", description: "Precision allergy testing programs", icon: Microscope, href: "/our-services#testing" },
+  { name: "Treatment", description: "Sublingual & subcutaneous options", icon: Syringe, href: "/our-services#treatment" },
+  { name: "Immunity & Health", description: "Long-term patient wellness", icon: HeartPulse, href: "/our-services#immunity" },
 ];
 
 const resourceItems = [
@@ -103,16 +103,23 @@ export function Header() {
                 onMouseEnter={handlePlatformEnter}
                 onMouseLeave={handlePlatformLeave}
               >
-                <button
-                  className="flex items-center gap-1 text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors py-2"
-                  onClick={() => {
-                    setPlatformOpen(!platformOpen);
-                    setResourcesOpen(false);
-                  }}
-                >
-                  Our Services
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${platformOpen ? "rotate-180" : ""}`} />
-                </button>
+                <div className="flex items-center gap-0.5">
+                  <Link
+                    href="/our-services"
+                    className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors py-2"
+                  >
+                    Our Services
+                  </Link>
+                  <button
+                    className="flex items-center text-[#2a1d1f] hover:text-[#564841] transition-colors py-2 px-1"
+                    onClick={() => {
+                      setPlatformOpen(!platformOpen);
+                      setResourcesOpen(false);
+                    }}
+                  >
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${platformOpen ? "rotate-180" : ""}`} />
+                  </button>
+                </div>
 
                 <div
                   className={`absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-lg border border-[#e8e5e0] py-2 transition-all duration-200 origin-top ${
