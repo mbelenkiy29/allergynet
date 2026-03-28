@@ -11,7 +11,7 @@ const steps = [
     title: "Simple Screening Test",
     subtitle: "An effective allergy program starts in the waiting room.",
     description:
-      "The first step in the Nationwide Allergy Protocol is effectively screening patients for significant allergy symptoms where over-the-counter medications have failed. This initial screening helps discern whether further discussion may be warranted for treatment — identifying the right patients before committing to a full testing program.",
+      "The first step in the Nationwide Allergy Protocol is effectively screening patients for significant allergy symptoms where over-the-counter medications have failed. This initial screening helps discern whether further discussion may be warranted for treatment, identifying the right patients before committing to a full testing program.",
     details: [
       "Administered in the waiting room before the appointment",
       "Identifies patients where OTC medications have not provided relief",
