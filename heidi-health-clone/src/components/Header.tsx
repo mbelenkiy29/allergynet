@@ -2,14 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronDown, Menu, X, Microscope, ClipboardList, HeartPulse, Syringe, HelpCircle, Newspaper, BookOpen, Users, Phone } from "lucide-react";
-
-const NationwideLogo = () => (
-  <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="20" cy="20" r="16" stroke="#2a1d1f" strokeWidth="3" fill="none"/>
-    <path d="M20 4 L20 36 M4 20 L36 20" stroke="#2a1d1f" strokeWidth="2" strokeLinecap="round"/>
-  </svg>
-);
 
 const platformItems = [
   { name: "Screening", description: "Identify allergy candidates quickly", icon: ClipboardList, href: "#" },
@@ -94,9 +88,16 @@ export function Header() {
       <header className="sticky top-0 z-50 bg-[#faf8f4] border-b border-[#e8e5e0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center gap-2">
-              <NationwideLogo />
-              <span className="font-serif text-xl font-semibold text-[#2a1d1f]">Nationwide Allergy</span>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/nationwide-allergy-logo.png"
+                alt="Nationwide Allergy"
+                width={220}
+                height={36}
+                style={{ width: "auto", height: "36px" }}
+                className="object-contain"
+                priority
+              />
             </Link>
 
             <nav className="hidden md:flex items-center gap-6">
