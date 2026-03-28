@@ -2,30 +2,28 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X, FileText, Search, MessageSquare, Stethoscope, Users, Brain, BookOpen, HelpCircle, Newspaper } from "lucide-react";
+import { ChevronDown, Menu, X, Microscope, ClipboardList, HeartPulse, Syringe, HelpCircle, Newspaper, BookOpen, Users, Phone } from "lucide-react";
 
-const HeidiLogo = () => (
+const NationwideLogo = () => (
   <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="8" stroke="#2a1d1f" strokeWidth="3" fill="none"/>
-    <circle cx="28" cy="12" r="8" stroke="#2a1d1f" strokeWidth="3" fill="none"/>
-    <circle cx="12" cy="28" r="8" stroke="#2a1d1f" strokeWidth="3" fill="none"/>
-    <circle cx="28" cy="28" r="8" stroke="#2a1d1f" strokeWidth="3" fill="none"/>
+    <circle cx="20" cy="20" r="16" stroke="#2a1d1f" strokeWidth="3" fill="none"/>
+    <path d="M20 4 L20 36 M4 20 L36 20" stroke="#2a1d1f" strokeWidth="2" strokeLinecap="round"/>
   </svg>
 );
 
 const platformItems = [
-  { name: "Evidence", description: "Clinical answers instantly", icon: Search, href: "#" },
-  { name: "Scribe", description: "AI documentation", icon: FileText, href: "#" },
-  { name: "Comms", description: "Patient communication", icon: MessageSquare, href: "#" },
-  { name: "Remote", description: "AI hardware", icon: Stethoscope, href: "#" },
+  { name: "Screening", description: "Identify allergy candidates quickly", icon: ClipboardList, href: "#" },
+  { name: "Testing", description: "Precision allergy testing programs", icon: Microscope, href: "#" },
+  { name: "Treatment", description: "Sublingual & subcutaneous options", icon: Syringe, href: "#" },
+  { name: "Immunity & Health", description: "Long-term patient wellness", icon: HeartPulse, href: "#" },
 ];
 
 const resourceItems = [
+  { name: "FAQ", description: "Common questions answered", icon: HelpCircle, href: "#" },
   { name: "Blog", description: "Latest updates & insights", icon: Newspaper, href: "#" },
-  { name: "Help Centre", description: "Get support", icon: HelpCircle, href: "#" },
-  { name: "Guides", description: "Learn how to use Heidi", icon: BookOpen, href: "#" },
-  { name: "Community", description: "Join the conversation", icon: Users, href: "#" },
-  { name: "Research", description: "Clinical studies", icon: Brain, href: "#" },
+  { name: "Guides", description: "Learn about our process", icon: BookOpen, href: "#" },
+  { name: "Community", description: "Connect with providers", icon: Users, href: "#" },
+  { name: "Contact Us", description: "Speak with our team", icon: Phone, href: "#" },
 ];
 
 export function Header() {
@@ -36,11 +34,9 @@ export function Header() {
   const platformRef = useRef<HTMLDivElement>(null);
   const resourcesRef = useRef<HTMLDivElement>(null);
 
-  // Timeout refs for hover delay
   const platformTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const resourcesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Close dropdowns when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (platformRef.current && !platformRef.current.contains(event.target as Node)) {
@@ -54,7 +50,6 @@ export function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Cleanup timeouts on unmount
   useEffect(() => {
     return () => {
       if (platformTimeoutRef.current) clearTimeout(platformTimeoutRef.current);
@@ -90,29 +85,21 @@ export function Header() {
 
   return (
     <>
-      {/* Announcement Banner */}
       <div className="bg-[#f9f7a4] py-2 px-4 text-center">
-        <Link
-          href="#"
-          className="text-sm text-[#2a1d1f] hover:underline"
-        >
-          A New Era for US Healthcare: Heidi and R1 RCM Unite in Landmark Revenue Cycle Management Partnership.
+        <Link href="#" className="text-sm text-[#2a1d1f] hover:underline">
+          Nationwide Allergy — Bringing precision allergy testing &amp; treatment to Primary Care providers since 2013.
         </Link>
       </div>
 
-      {/* Main Navigation */}
       <header className="sticky top-0 z-50 bg-[#faf8f4] border-b border-[#e8e5e0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <HeidiLogo />
-              <span className="font-serif text-2xl font-semibold text-[#2a1d1f]">Heidi</span>
+              <NationwideLogo />
+              <span className="font-serif text-xl font-semibold text-[#2a1d1f]">Nationwide Allergy</span>
             </Link>
 
-            {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-6">
-              {/* Platform Dropdown */}
               <div
                 className="relative"
                 ref={platformRef}
@@ -126,15 +113,15 @@ export function Header() {
                     setResourcesOpen(false);
                   }}
                 >
-                  Platform
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${platformOpen ? 'rotate-180' : ''}`} />
+                  Our Services
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${platformOpen ? "rotate-180" : ""}`} />
                 </button>
 
                 <div
                   className={`absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-lg border border-[#e8e5e0] py-2 transition-all duration-200 origin-top ${
                     platformOpen
-                      ? 'opacity-100 scale-100 translate-y-0'
-                      : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
+                      ? "opacity-100 scale-100 translate-y-0"
+                      : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
                   }`}
                 >
                   {platformItems.map((item) => {
@@ -157,7 +144,6 @@ export function Header() {
                 </div>
               </div>
 
-              {/* Resources Dropdown */}
               <div
                 className="relative"
                 ref={resourcesRef}
@@ -172,14 +158,14 @@ export function Header() {
                   }}
                 >
                   Resources
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${resourcesOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`} />
                 </button>
 
                 <div
                   className={`absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-lg border border-[#e8e5e0] py-2 transition-all duration-200 origin-top ${
                     resourcesOpen
-                      ? 'opacity-100 scale-100 translate-y-0'
-                      : 'opacity-0 scale-95 -translate-y-2 pointer-events-none'
+                      ? "opacity-100 scale-100 translate-y-0"
+                      : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
                   }`}
                 >
                   {resourceItems.map((item) => {
@@ -203,38 +189,28 @@ export function Header() {
               </div>
 
               <Link href="#" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
-                Enterprise
+                Why Us
               </Link>
               <Link href="#" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
                 Pricing
               </Link>
               <Link href="#" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
-                Chat with us
+                Contact
               </Link>
-              <div className="flex items-center gap-1 text-sm text-[#2a1d1f]">
-                <span className="text-base">🇺🇸</span>
-                US
-                <ChevronDown className="w-4 h-4" />
-              </div>
             </nav>
 
-            {/* CTA Buttons */}
             <div className="hidden md:flex items-center gap-3">
-              <Link
-                href="#"
-                className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors"
-              >
+              <Link href="#" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
                 Log in
               </Link>
               <Link
                 href="#"
                 className="px-4 py-2 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full hover:bg-[#564841] transition-colors"
               >
-                Get Heidi free
+                Sign Up Today
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               className="md:hidden p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -249,13 +225,11 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-[#faf8f4] border-t border-[#e8e5e0]">
             <nav className="px-4 py-4 flex flex-col gap-2">
-              {/* Mobile Platform Section */}
               <div className="border-b border-[#e8e5e0] pb-3">
-                <p className="text-xs font-semibold text-[#88706a] uppercase tracking-wide mb-2">Platform</p>
+                <p className="text-xs font-semibold text-[#88706a] uppercase tracking-wide mb-2">Our Services</p>
                 {platformItems.map((item) => {
                   const Icon = item.icon;
                   return (
@@ -272,7 +246,6 @@ export function Header() {
                 })}
               </div>
 
-              {/* Mobile Resources Section */}
               <div className="border-b border-[#e8e5e0] pb-3">
                 <p className="text-xs font-semibold text-[#88706a] uppercase tracking-wide mb-2">Resources</p>
                 {resourceItems.map((item) => {
@@ -291,9 +264,9 @@ export function Header() {
                 })}
               </div>
 
-              <Link href="#" className="py-2 text-[#2a1d1f] hover:text-[#564841]">Enterprise</Link>
+              <Link href="#" className="py-2 text-[#2a1d1f] hover:text-[#564841]">Why Us</Link>
               <Link href="#" className="py-2 text-[#2a1d1f] hover:text-[#564841]">Pricing</Link>
-              <Link href="#" className="py-2 text-[#2a1d1f] hover:text-[#564841]">Chat with us</Link>
+              <Link href="#" className="py-2 text-[#2a1d1f] hover:text-[#564841]">Contact</Link>
 
               <div className="flex gap-3 pt-4 border-t border-[#e8e5e0]">
                 <Link href="#" className="text-[#2a1d1f]">Log in</Link>
@@ -301,7 +274,7 @@ export function Header() {
                   href="#"
                   className="px-4 py-2 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full"
                 >
-                  Get Heidi free
+                  Sign Up Today
                 </Link>
               </div>
             </nav>

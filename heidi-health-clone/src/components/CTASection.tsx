@@ -4,12 +4,10 @@ import Link from "next/link";
 import { Plus } from "lucide-react";
 import { AnimatedSection } from "./AnimatedSection";
 
-const HeidiIcon = () => (
+const AllergyIcon = () => (
   <svg width="48" height="48" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="8" stroke="#2a1d1f" strokeWidth="2.5" fill="none"/>
-    <circle cx="28" cy="12" r="8" stroke="#2a1d1f" strokeWidth="2.5" fill="none"/>
-    <circle cx="12" cy="28" r="8" stroke="#2a1d1f" strokeWidth="2.5" fill="none"/>
-    <circle cx="28" cy="28" r="8" stroke="#2a1d1f" strokeWidth="2.5" fill="none"/>
+    <circle cx="20" cy="20" r="16" stroke="#2a1d1f" strokeWidth="2.5" fill="none"/>
+    <path d="M20 4 L20 36 M4 20 L36 20" stroke="#2a1d1f" strokeWidth="2" strokeLinecap="round"/>
   </svg>
 );
 
@@ -19,7 +17,6 @@ export function CTASection() {
       <div className="max-w-6xl mx-auto px-4">
         <AnimatedSection animation="scale-up">
           <div className="relative bg-[#f9f7a4] rounded-3xl p-12 md:p-20 overflow-hidden">
-            {/* Decorative Shapes */}
             <div className="absolute inset-0 overflow-hidden">
               <svg
                 className="absolute -bottom-20 -left-20 w-64 h-64 text-[#2a1d1f] opacity-10"
@@ -50,20 +47,22 @@ export function CTASection() {
               </svg>
             </div>
 
-            {/* Content */}
             <div className="relative text-center">
               <div className="flex justify-center mb-6">
-                <HeidiIcon />
+                <AllergyIcon />
               </div>
-              <h2 className="font-serif text-3xl md:text-5xl text-[#2a1d1f] mb-8">
-                Feel the difference of<br />Heidi by your side.
+              <h2 className="font-serif text-3xl md:text-5xl text-[#2a1d1f] mb-4">
+                Start providing allergy solutions<br />in under 10 minutes.
               </h2>
+              <p className="text-[#564841] mb-8 max-w-xl mx-auto">
+                Sign up takes less than 10 minutes and you could be on your way to providing the highest quality allergy solutions for your patients — with no long-term contracts.
+              </p>
               <Link
                 href="#"
                 className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full hover:bg-[#564841] hover:shadow-lg transition-all"
               >
                 <Plus className="w-4 h-4" />
-                Get Heidi free
+                Sign Up Today
               </Link>
             </div>
           </div>
