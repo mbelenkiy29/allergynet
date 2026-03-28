@@ -136,7 +136,7 @@ export default function OurServicesPage() {
                         src={step.image}
                         alt={step.title}
                         className="w-full rounded-2xl object-cover mt-6 shadow-sm"
-                        style={{ maxHeight: "200px" }}
+                        style={{ height: "320px" }}
                       />
                     )}
                   </div>
