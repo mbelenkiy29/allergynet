@@ -18,7 +18,7 @@ const steps = [
       "Simple, standardized questionnaire provided by Nationwide Allergy",
       "Requires no additional equipment or staff training to begin",
     ],
-    image: "/simple-screening-test.avif",
+    image: "/simple-screening-test.avif" as string | null,
     color: "from-sky-50 to-sky-100",
     accent: "bg-sky-500",
   },
@@ -35,6 +35,7 @@ const steps = [
       "Complete training provided for your staff",
       "All office documents and forms included",
     ],
+    image: null,
     color: "from-amber-50 to-amber-100",
     accent: "bg-amber-500",
   },
@@ -51,6 +52,7 @@ const steps = [
       "Treatment planning tailored to each patient's allergen profile",
       "Ongoing quality and service support throughout",
     ],
+    image: null,
     color: "from-emerald-50 to-emerald-100",
     accent: "bg-emerald-500",
   },
@@ -67,6 +69,7 @@ const steps = [
       "Treatment vials prepared and shipped directly to your practice",
       "Simple flat-fee pricing with no long-term contracts",
     ],
+    image: null,
     color: "from-rose-50 to-rose-100",
     accent: "bg-rose-500",
   },
@@ -135,7 +138,7 @@ export default function OurServicesPage() {
 
                   {/* Content side */}
                   <div className={`p-10 md:p-16 flex flex-col justify-center ${isEven ? "md:order-1" : ""}`}>
-                    {"image" in step && step.image && (
+                    {step.image && (
                       <img
                         src={step.image}
                         alt={step.title}
