@@ -134,18 +134,18 @@ export default function OurServicesPage() {
                       {step.title}
                     </h2>
                     <p className="text-[#564841] text-center text-sm italic">{step.subtitle}</p>
-                  </div>
-
-                  {/* Content side */}
-                  <div className={`p-10 md:p-16 flex flex-col justify-center ${isEven ? "md:order-1" : ""}`}>
                     {step.image && (
                       <img
                         src={step.image}
                         alt={step.title}
-                        className="w-full rounded-2xl object-cover mb-6 shadow-sm"
-                        style={{ maxHeight: "220px" }}
+                        className="w-full rounded-2xl object-cover mt-6 shadow-sm"
+                        style={{ maxHeight: "200px" }}
                       />
                     )}
+                  </div>
+
+                  {/* Content side */}
+                  <div className={`p-10 md:p-16 flex flex-col justify-center ${isEven ? "md:order-1" : ""}`}>
                     <p className="text-[#564841] text-lg leading-relaxed mb-8">
                       {step.description}
                     </p>
