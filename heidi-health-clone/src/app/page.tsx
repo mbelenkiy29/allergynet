@@ -17,14 +17,14 @@ export default function Home() {
       <Header />
       <HeroSection />
       <PartnersMarquee />
-      <HeidiRemoteSection />
+      <div id="why-us"><HeidiRemoteSection /></div>
       <CarePartnerSection />
       <FeaturesSection />
       <StatsSection />
       <VideoSection />
       <SecuritySection />
-      <EnterpriseSection />
-      <CTASection />
+      <div id="pricing"><EnterpriseSection /></div>
+      <div id="contact"><CTASection /></div>
       <Footer />
     </main>
   );

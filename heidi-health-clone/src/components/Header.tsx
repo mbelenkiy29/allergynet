@@ -12,11 +12,11 @@ const platformItems = [
 ];
 
 const resourceItems = [
-  { name: "FAQ", description: "Common questions answered", icon: HelpCircle, href: "#" },
-  { name: "Blog", description: "Latest updates & insights", icon: Newspaper, href: "#" },
-  { name: "Guides", description: "Learn about our process", icon: BookOpen, href: "#" },
-  { name: "Community", description: "Connect with providers", icon: Users, href: "#" },
-  { name: "Contact Us", description: "Speak with our team", icon: Phone, href: "#" },
+  { name: "FAQ", description: "Common questions answered", icon: HelpCircle, href: "https://www.nationwideallergy.net/faq", external: true },
+  { name: "Blog", description: "Latest updates & insights", icon: Newspaper, href: "https://www.nationwideallergy.net/blog", external: true },
+  { name: "Guides", description: "Learn about our process", icon: BookOpen, href: "/our-services", external: false },
+  { name: "Community", description: "Connect with providers", icon: Users, href: "https://www.nationwideallergy.net", external: true },
+  { name: "Contact Us", description: "Speak with our team", icon: Phone, href: "/#contact", external: false },
 ];
 
 export function Header() {
@@ -79,7 +79,7 @@ export function Header() {
   return (
     <>
       <div className="bg-[#f9f7a4] py-2 px-4 text-center">
-        <Link href="#" className="text-sm text-[#2a1d1f] hover:underline">
+        <Link href="/" className="text-sm text-[#2a1d1f] hover:underline">
           Nationwide Allergy — Bringing precision allergy testing &amp; treatment to Primary Care providers since 2013.
         </Link>
       </div>
@@ -180,6 +180,7 @@ export function Header() {
                         href={item.href}
                         className="flex items-start gap-3 px-4 py-3 hover:bg-[#f5f3ef] transition-colors"
                         onClick={() => setResourcesOpen(false)}
+                        {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                       >
                         <Icon className="w-5 h-5 text-[#564841] mt-0.5" />
                         <div>
@@ -192,23 +193,28 @@ export function Header() {
                 </div>
               </div>
 
-              <Link href="#" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
+              <Link href="/#why-us" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
                 Why Us
               </Link>
-              <Link href="#" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
+              <Link href="/#pricing" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
                 Pricing
               </Link>
-              <Link href="#" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
+              <Link href="/#contact" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
                 Contact
               </Link>
             </nav>
 
             <div className="hidden md:flex items-center gap-3">
-              <Link href="#" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
+              <Link
+                href="https://www.nationwideallergy.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors"
+              >
                 Log in
               </Link>
               <Link
-                href="#"
+                href="/our-services"
                 className="px-4 py-2 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full hover:bg-[#564841] transition-colors"
               >
                 Sign Up Today
@@ -260,6 +266,7 @@ export function Header() {
                       href={item.href}
                       className="flex items-center gap-3 py-2 text-[#2a1d1f] hover:text-[#564841]"
                       onClick={() => setMobileMenuOpen(false)}
+                      {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     >
                       <Icon className="w-4 h-4" />
                       {item.name}
@@ -268,15 +275,16 @@ export function Header() {
                 })}
               </div>
 
-              <Link href="#" className="py-2 text-[#2a1d1f] hover:text-[#564841]">Why Us</Link>
-              <Link href="#" className="py-2 text-[#2a1d1f] hover:text-[#564841]">Pricing</Link>
-              <Link href="#" className="py-2 text-[#2a1d1f] hover:text-[#564841]">Contact</Link>
+              <Link href="/#why-us" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Why Us</Link>
+              <Link href="/#pricing" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
+              <Link href="/#contact" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
 
               <div className="flex gap-3 pt-4 border-t border-[#e8e5e0]">
-                <Link href="#" className="text-[#2a1d1f]">Log in</Link>
+                <Link href="https://www.nationwideallergy.net" target="_blank" rel="noopener noreferrer" className="text-[#2a1d1f]">Log in</Link>
                 <Link
-                  href="#"
+                  href="/our-services"
                   className="px-4 py-2 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   Sign Up Today
                 </Link>
