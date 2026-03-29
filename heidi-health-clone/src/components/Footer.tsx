@@ -3,14 +3,6 @@
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
 
-const HeidiLogo = () => (
-  <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="8" stroke="#2a1d1f" strokeWidth="3" fill="none"/>
-    <circle cx="28" cy="12" r="8" stroke="#2a1d1f" strokeWidth="3" fill="none"/>
-    <circle cx="12" cy="28" r="8" stroke="#2a1d1f" strokeWidth="3" fill="none"/>
-    <circle cx="28" cy="28" r="8" stroke="#2a1d1f" strokeWidth="3" fill="none"/>
-  </svg>
-);
 
 const footerSections = [
   {
@@ -115,14 +107,18 @@ export function Footer() {
                 );
               })}
             </div>
-            <p className="text-sm text-[#564841] mb-2">Heidi. By your side.</p>
-            <p className="text-xs text-[#88706a]">© 2026 Heidi. All rights reserved.</p>
+            <p className="text-sm text-[#564841] mb-2">Nationwide Allergy. By your side.</p>
+            <p className="text-xs text-[#88706a]">© 2026 Nationwide Allergy. All rights reserved.</p>
 
             {/* Logo */}
             <div className="mt-8">
-              <Link href="/" className="flex items-center gap-2">
-                <HeidiLogo />
-                <span className="font-serif text-xl font-semibold text-[#2a1d1f]">Heidi</span>
+              <Link href="/" className="flex items-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/na-logo-v2.avif"
+                  alt="Nationwide Allergy"
+                  style={{ height: "36px", width: "auto" }}
+                />
               </Link>
             </div>
           </div>

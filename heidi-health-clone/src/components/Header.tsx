@@ -90,7 +90,7 @@ export function Header() {
             <Link href="/" className="flex items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/na-logo-v2.png"
+                src="/na-logo-v2.avif"
                 alt="Nationwide Allergy"
                 style={{ height: "36px", width: "auto" }}
               />
