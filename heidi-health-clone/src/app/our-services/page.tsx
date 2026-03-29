@@ -69,7 +69,7 @@ const steps = [
       "Treatment vials prepared and shipped directly to your practice",
       "Simple flat-fee pricing with no long-term contracts",
     ],
-    image: null,
+    image: "/treatment.avif" as string | null,
     color: "from-rose-50 to-rose-100",
     accent: "bg-rose-500",
   },
