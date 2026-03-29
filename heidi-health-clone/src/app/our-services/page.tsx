@@ -52,7 +52,7 @@ const steps = [
       "Treatment planning tailored to each patient's allergen profile",
       "Ongoing quality and service support throughout",
     ],
-    image: null,
+    image: "/results.avif" as string | null,
     color: "from-emerald-50 to-emerald-100",
     accent: "bg-emerald-500",
   },
