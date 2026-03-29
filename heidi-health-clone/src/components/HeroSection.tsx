@@ -5,12 +5,6 @@ import Link from "next/link";
 import { Search, Loader2, Sparkles } from "lucide-react";
 import { AnimatedSection } from "./AnimatedSection";
 
-const AllergyIcon = () => (
-  <svg width="48" height="48" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="20" cy="20" r="16" stroke="#2a1d1f" strokeWidth="2.5" fill="none"/>
-    <path d="M20 4 L20 36 M4 20 L36 20" stroke="#2a1d1f" strokeWidth="2" strokeLinecap="round"/>
-  </svg>
-);
 
 const features = ["Screening", "Testing", "Treatment"];
 const featureDescriptions: Record<string, string> = {
@@ -71,7 +65,8 @@ export function HeroSection() {
     <section className="py-16 md:py-24">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <AnimatedSection animation="scale-up" className="flex justify-center mb-8">
-          <AllergyIcon />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/na-icon.png" alt="Nationwide Allergy" style={{ height: "72px", width: "72px", objectFit: "contain" }} />
         </AnimatedSection>
 
         <AnimatedSection animation="fade-up" delay={100}>
