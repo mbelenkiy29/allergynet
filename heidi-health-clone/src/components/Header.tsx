@@ -193,6 +193,9 @@ export function Header() {
                 </div>
               </div>
 
+              <Link href="/research" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
+                Research
+              </Link>
               <Link href="/#why-us" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
                 Why Us
               </Link>
@@ -273,6 +276,7 @@ export function Header() {
                 })}
               </div>
 
+              <Link href="/research" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Research</Link>
               <Link href="/#why-us" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Why Us</Link>
               <Link href="/#pricing" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Pricing</Link>
               <Link href="/#contact" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
