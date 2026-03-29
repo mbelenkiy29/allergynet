@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Search, Syringe, HeartPulse, Microscope, ClipboardCheck, Loader2, Sparkles } from "lucide-react";
+import { Search, Loader2, Sparkles } from "lucide-react";
 import { AnimatedSection } from "./AnimatedSection";
 
 const AllergyIcon = () => (
@@ -169,31 +169,6 @@ export function HeroSection() {
         </AnimatedSection>
 
         <AnimatedSection animation="fade-up" delay={400}>
-          <div className="flex flex-wrap justify-center gap-2 mb-8">
-            <button className="flex items-center gap-2 px-4 py-2 bg-white border border-[#e8e5e0] rounded-full text-sm text-[#2a1d1f] hover:border-[#2a1d1f] hover:shadow-sm transition-all">
-              <ClipboardCheck className="w-4 h-4" />
-              Screen
-            </button>
-            <button className="flex items-center gap-2 px-4 py-2 bg-white border border-[#e8e5e0] rounded-full text-sm text-[#2a1d1f] hover:border-[#2a1d1f] hover:shadow-sm transition-all">
-              <Microscope className="w-4 h-4" />
-              Test
-            </button>
-            <button className="flex items-center gap-2 px-4 py-2 bg-white border border-[#e8e5e0] rounded-full text-sm text-[#2a1d1f] hover:border-[#2a1d1f] hover:shadow-sm transition-all">
-              <Syringe className="w-4 h-4" />
-              Treat
-            </button>
-            <button className="flex items-center gap-2 px-4 py-2 bg-white border border-[#e8e5e0] rounded-full text-sm text-[#2a1d1f] hover:border-[#2a1d1f] hover:shadow-sm transition-all">
-              <HeartPulse className="w-4 h-4" />
-              Immunize
-            </button>
-            <button className="flex items-center gap-2 px-4 py-2 bg-white border border-[#e8e5e0] rounded-full text-sm text-[#2a1d1f] hover:border-[#2a1d1f] hover:shadow-sm transition-all">
-              <Search className="w-4 h-4" />
-              Look up
-            </button>
-          </div>
-        </AnimatedSection>
-
-        <AnimatedSection animation="fade-up" delay={500}>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="#"
