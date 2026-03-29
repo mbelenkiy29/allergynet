@@ -112,13 +112,14 @@ export function Footer() {
 
             {/* Logo */}
             <div className="mt-8">
-              <Link href="/" className="flex items-center">
+              <Link href="/" className="flex items-center gap-2">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/na-logo-v2.avif"
+                  src="/na-icon.png"
                   alt="Nationwide Allergy"
-                  style={{ height: "36px", width: "auto" }}
+                  style={{ height: "40px", width: "40px", objectFit: "contain" }}
                 />
+                <span className="font-serif font-semibold text-[#2a1d1f] text-lg leading-tight">Nationwide<br />Allergy</span>
               </Link>
             </div>
           </div>

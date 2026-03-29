@@ -87,13 +87,14 @@ export function Header() {
       <header className="sticky top-0 z-50 bg-[#faf8f4] border-b border-[#e8e5e0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center gap-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/na-logo-v2.avif"
+                src="/na-icon.png"
                 alt="Nationwide Allergy"
-                style={{ height: "36px", width: "auto" }}
+                style={{ height: "40px", width: "40px", objectFit: "contain" }}
               />
+              <span className="font-serif font-semibold text-[#2a1d1f] text-lg leading-tight">Nationwide<br />Allergy</span>
             </Link>
 
             <nav className="hidden md:flex items-center gap-6">
