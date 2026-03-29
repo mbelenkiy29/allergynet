@@ -35,7 +35,7 @@ const steps = [
       "Complete training provided for your staff",
       "All office documents and forms included",
     ],
-    image: null,
+    image: "/testing.avif" as string | null,
     color: "from-amber-50 to-amber-100",
     accent: "bg-amber-500",
   },
