@@ -206,15 +206,13 @@ export function Header() {
 
             <div className="hidden md:flex items-center gap-3">
               <Link
-                href="https://www.nationwideallergy.net"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/login"
                 className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors"
               >
                 Log in
               </Link>
               <Link
-                href="/our-services"
+                href="/sign-up"
                 className="px-4 py-2 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full hover:bg-[#564841] transition-colors"
               >
                 Sign Up Today
@@ -280,9 +278,9 @@ export function Header() {
               <Link href="/#contact" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
 
               <div className="flex gap-3 pt-4 border-t border-[#e8e5e0]">
-                <Link href="https://www.nationwideallergy.net" target="_blank" rel="noopener noreferrer" className="text-[#2a1d1f]">Log in</Link>
+                <Link href="/login" className="text-[#2a1d1f]" onClick={() => setMobileMenuOpen(false)}>Log in</Link>
                 <Link
-                  href="/our-services"
+                  href="/sign-up"
                   className="px-4 py-2 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full"
                   onClick={() => setMobileMenuOpen(false)}
                 >
