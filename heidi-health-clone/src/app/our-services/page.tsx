@@ -121,21 +121,23 @@ export default function OurServicesPage() {
               >
                 <div className={`grid md:grid-cols-2 gap-0 ${isEven ? "md:flex-row-reverse" : ""}`}>
                   {/* Icon / Number side */}
-                  <div className={`flex flex-col justify-center items-center p-12 md:p-16 bg-white/40 ${isEven ? "md:order-2" : ""}`}>
-                    <div className="mb-6">
-                      <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center">
-                        <Icon className="w-8 h-8 text-[#2a1d1f]" />
+                  <div className={`flex flex-col bg-white/40 ${isEven ? "md:order-2" : ""}`}>
+                    <div className="flex flex-col items-center justify-center p-12 md:p-16">
+                      <div className="mb-6">
+                        <div className="w-16 h-16 rounded-2xl bg-white shadow-lg flex items-center justify-center">
+                          <Icon className="w-8 h-8 text-[#2a1d1f]" />
+                        </div>
                       </div>
+                      <h2 className="font-serif text-3xl md:text-4xl text-[#2a1d1f] text-center mb-2">
+                        {step.title}
+                      </h2>
+                      <p className="text-[#564841] text-center text-sm italic">{step.subtitle}</p>
                     </div>
-                    <h2 className="font-serif text-3xl md:text-4xl text-[#2a1d1f] text-center mb-2">
-                      {step.title}
-                    </h2>
-                    <p className="text-[#564841] text-center text-sm italic">{step.subtitle}</p>
                     {step.image && (
                       <img
                         src={step.image}
                         alt={step.title}
-                        className="w-full rounded-2xl object-cover mt-6 shadow-sm"
+                        className="w-full object-cover"
                         style={{ height: "320px" }}
                       />
                     )}
