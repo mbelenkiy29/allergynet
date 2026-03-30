@@ -203,7 +203,7 @@ export function Header() {
               <Link href="/faq" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
                 FAQ
               </Link>
-              <Link href="/#contact" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
+              <Link href="/contact" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
                 Contact
               </Link>
             </nav>
@@ -280,7 +280,7 @@ export function Header() {
               <Link href="/#why-us" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Why Us</Link>
               <Link href="/research" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Research</Link>
               <Link href="/faq" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>FAQ</Link>
-              <Link href="/#contact" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+              <Link href="/contact" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
 
               <div className="flex gap-3 pt-4 border-t border-[#e8e5e0]">
                 <Link href="/login" className="text-[#2a1d1f]" onClick={() => setMobileMenuOpen(false)}>Log in</Link>
