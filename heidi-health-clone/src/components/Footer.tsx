@@ -8,14 +8,14 @@ const footerSections = [
   {
     title: "Specialties",
     links: [
-      { name: "Family Medicine", href: "#" },
-      { name: "Specialists", href: "#" },
-      { name: "Nurses", href: "#" },
-      { name: "Mental Health", href: "#" },
-      { name: "Allied Health", href: "#" },
-      { name: "Dentists", href: "#" },
-      { name: "Veterinarians", href: "#" },
-      { name: "Trainees", href: "#" },
+      { name: "Family Medicine", href: "/our-services" },
+      { name: "Specialists", href: "/our-services" },
+      { name: "Nurses", href: "/our-services" },
+      { name: "Mental Health", href: "/contact" },
+      { name: "Allied Health", href: "/our-services" },
+      { name: "Dentists", href: "/contact" },
+      { name: "Veterinarians", href: "/contact" },
+      { name: "Trainees", href: "/sign-up" },
     ],
   },
   {
