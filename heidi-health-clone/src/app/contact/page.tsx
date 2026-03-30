@@ -70,8 +70,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-xs font-medium text-[#88706a] uppercase tracking-widest mb-0.5">Phone</p>
-                  <a href="tel:18009011522" className="text-sm text-[#2a1d1f] hover:text-[#564841]">
-                    1-800-901-1522
+                  <a href="tel:18003514912" className="text-sm text-[#2a1d1f] hover:text-[#564841]">
+                    +1 800-351-4912
                   </a>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-xs font-medium text-[#88706a] uppercase tracking-widest mb-0.5">Location</p>
-                  <p className="text-sm text-[#2a1d1f]">United States — Nationwide</p>
+                  <p className="text-sm text-[#2a1d1f]">Dallas, TX 75226</p>
                 </div>
               </div>
             </div>
