@@ -19,10 +19,10 @@ export function EnterpriseSection() {
             Chosen by Primary Care providers<br />for their patients across<br />all 50 states.
           </h2>
           <Link
-            href="#"
+            href="/contact"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-[#2a1d1f] bg-white border border-[#2a1d1f] rounded-full hover:bg-[#f5f3ef] transition-colors"
           >
-            Find Out More
+            Talk to Our Team
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
@@ -39,10 +39,10 @@ export function EnterpriseSection() {
               Simple flat-fee pricing with no fee-splitting and no complicated MSO arrangements — ever.
             </p>
             <Link
-              href="#"
+              href="/contact"
               className="inline-flex items-center gap-2 text-sm text-[#f9f7a4] hover:underline"
             >
-              View our pricing
+              Get started — no contracts
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -53,7 +53,7 @@ export function EnterpriseSection() {
             </p>
             <div className="flex items-center justify-between">
               <Link
-                href="#"
+                href="/our-services"
                 className="inline-flex items-center gap-2 text-sm text-[#2a1d1f] hover:underline"
               >
                 Learn about our approach
@@ -74,7 +74,7 @@ export function EnterpriseSection() {
               Say goodbye to allergies — for life
             </p>
             <Link
-              href="#"
+              href="/our-services"
               className="inline-flex items-center gap-2 text-sm text-[#2a1d1f] hover:underline"
             >
               Read more
@@ -84,7 +84,7 @@ export function EnterpriseSection() {
 
           <div className="bg-[#2a1d1f] rounded-2xl p-6">
             <Link
-              href="#"
+              href="/our-services"
               className="inline-flex items-center gap-2 text-sm text-[#faf8f4] hover:underline mb-8"
             >
               Learn more

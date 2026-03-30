@@ -208,24 +208,24 @@ export default function OurServicesPage() {
       <section className="py-16 md:py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-serif text-3xl md:text-4xl text-[#2a1d1f] mb-4">
-            Have questions about the process?
+            Your patients can't wait. Neither should you.
           </h2>
           <p className="text-[#564841] mb-8">
-            Our team is ready to walk you through every detail and help you design a program that fits your practice.
+            Every day without an allergy program is another day your patients leave without real answers. Our team will set everything up for you — typically in under 10 minutes.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
-              href="#"
+              href="/faq"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-[#2a1d1f] bg-white border border-[#2a1d1f] rounded-full hover:bg-[#f5f3ef] transition-colors"
             >
               View FAQ
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              href="#"
+              href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full hover:bg-[#564841] transition-colors"
             >
-              Contact our team
+              Get started today
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

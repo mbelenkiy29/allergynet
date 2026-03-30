@@ -8,9 +8,9 @@ import { AnimatedSection } from "./AnimatedSection";
 
 const features = ["Screening", "Testing", "Treatment"];
 const featureDescriptions: Record<string, string> = {
-  "Screening": "Identify allergy candidates right in the waiting room",
-  "Testing": "Custom-tailored precision allergy testing for your patients",
-  "Treatment": "Sublingual & subcutaneous treatments that resolve the allergy itself",
+  "Screening": "1 in 5 patients has allergies — don't let them leave without answers",
+  "Testing": "Stop guessing. Know exactly what's triggering your patients' symptoms.",
+  "Treatment": "Medications mask symptoms. Immunotherapy resolves the allergy itself.",
 };
 
 const sampleQueries = [
@@ -166,16 +166,16 @@ export function HeroSection() {
         <AnimatedSection animation="fade-up" delay={400}>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
-              href="#"
+              href="/sign-up"
               className="px-6 py-3 text-sm font-medium text-[#2a1d1f] bg-[#f9f7a4] rounded-full border border-[#2a1d1f] hover:bg-[#f5f2a0] hover:shadow-md transition-all"
             >
-              Sign Up Today
+              Start Today — It's Free
             </Link>
             <Link
-              href="#"
+              href="/contact"
               className="px-6 py-3 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full hover:bg-[#564841] hover:shadow-md transition-all"
             >
-              Contact Us
+              Talk to Our Team
             </Link>
           </div>
         </AnimatedSection>

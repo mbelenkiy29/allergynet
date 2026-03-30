@@ -8,16 +8,16 @@ export function HeidiRemoteSection() {
     <section className="py-16 md:py-24">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="font-serif text-3xl md:text-5xl text-[#2a1d1f] mb-4">
-          A Smart Solution For Allergy Sufferers
+          1 in 5 of Your Patients Is Suffering.<br />You Can Change That.
         </h2>
         <p className="text-lg text-[#564841] mb-8">
-          Mass-produced OTC and prescription allergy medications can ease patient symptoms — but they often have significant side effects. There are now treatments available that have been specifically designed to resolve the allergy itself.
+          OTC medications only mask symptoms — often with significant side effects and no end in sight. Allergen immunotherapy is the only treatment proven to resolve the allergy itself, and your practice can start offering it today.
         </p>
         <Link
-          href="#"
+          href="/our-services"
           className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full hover:bg-[#564841] transition-colors"
         >
-          Explore treatment options
+          See how it works
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>

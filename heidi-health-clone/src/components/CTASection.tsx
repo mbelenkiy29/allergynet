@@ -52,17 +52,17 @@ export function CTASection() {
                 <AllergyIcon />
               </div>
               <h2 className="font-serif text-3xl md:text-5xl text-[#2a1d1f] mb-4">
-                Start providing allergy solutions<br />in under 10 minutes.
+                Are You Ready to Add Allergy<br />Services to Your Practice?
               </h2>
               <p className="text-[#564841] mb-8 max-w-xl mx-auto">
-                Sign up takes less than 10 minutes and you could be on your way to providing the highest quality allergy solutions for your patients — with no long-term contracts.
+                Practices that add allergy services see increased patient satisfaction and a new revenue stream — with no long-term contracts and setup in under 10 minutes. Don't wait while your patients keep suffering.
               </p>
               <Link
-                href="#"
+                href="/sign-up"
                 className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full hover:bg-[#564841] hover:shadow-lg transition-all"
               >
                 <Plus className="w-4 h-4" />
-                Sign Up Today
+                Get Started Now
               </Link>
             </div>
           </div>
