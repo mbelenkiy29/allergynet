@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X, Microscope, ClipboardList, HeartPulse, Syringe, HelpCircle, Newspaper, BookOpen, Users, Phone } from "lucide-react";
+import { ChevronDown, Menu, X, Microscope, ClipboardList, HeartPulse, Syringe, HelpCircle, Newspaper, BookOpen, Users, Phone, FlaskConical } from "lucide-react";
 
 const platformItems = [
   { name: "Screening", description: "Identify allergy candidates quickly", icon: ClipboardList, href: "/our-services#screening" },
@@ -12,11 +12,12 @@ const platformItems = [
 ];
 
 const resourceItems = [
-  { name: "FAQ", description: "Common questions answered", icon: HelpCircle, href: "https://www.nationwideallergy.net/faq", external: true },
+  { name: "Lab & Blood Tests", description: "Tests we use and why", icon: FlaskConical, href: "/resources/lab-blood-tests", external: false },
+  { name: "FAQ", description: "Common questions answered", icon: HelpCircle, href: "/faq", external: false },
   { name: "Blog", description: "Latest updates & insights", icon: Newspaper, href: "https://www.nationwideallergy.net/blog", external: true },
   { name: "Guides", description: "Learn about our process", icon: BookOpen, href: "/our-services", external: false },
   { name: "Community", description: "Connect with providers", icon: Users, href: "https://www.nationwideallergy.net", external: true },
-  { name: "Contact Us", description: "Speak with our team", icon: Phone, href: "/#contact", external: false },
+  { name: "Contact Us", description: "Speak with our team", icon: Phone, href: "/contact", external: false },
 ];
 
 export function Header() {
