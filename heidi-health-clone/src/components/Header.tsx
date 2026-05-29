@@ -14,9 +14,7 @@ const platformItems = [
 const resourceItems = [
   { name: "Lab & Blood Tests", description: "Tests we use and why", icon: FlaskConical, href: "/resources/lab-blood-tests", external: false },
   { name: "FAQ", description: "Common questions answered", icon: HelpCircle, href: "/faq", external: false },
-  { name: "Blog", description: "Latest updates & insights", icon: Newspaper, href: "https://www.nationwideallergy.net/blog", external: true },
   { name: "Guides", description: "Learn about our process", icon: BookOpen, href: "/our-services", external: false },
-  { name: "Community", description: "Connect with providers", icon: Users, href: "https://www.nationwideallergy.net", external: true },
   { name: "Contact Us", description: "Speak with our team", icon: Phone, href: "/contact", external: false },
 ];
 
