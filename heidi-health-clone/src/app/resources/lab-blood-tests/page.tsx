@@ -167,7 +167,7 @@ export default function LabBloodTestsPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full hover:bg-[#564841] transition-colors mb-12"
               >
-                Learn about our compliance & security
+                Learn about our safety and protocols
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
