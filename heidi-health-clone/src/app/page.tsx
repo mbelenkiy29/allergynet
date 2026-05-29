@@ -5,7 +5,6 @@ import { HeidiRemoteSection } from "@/components/HeidiRemoteSection";
 import { CarePartnerSection } from "@/components/CarePartnerSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { StatsSection } from "@/components/StatsSection";
-import { VideoSection } from "@/components/VideoSection";
 import { SecuritySection } from "@/components/SecuritySection";
 import { EnterpriseSection } from "@/components/EnterpriseSection";
 import { CTASection } from "@/components/CTASection";
@@ -21,7 +20,6 @@ export default function Home() {
       <CarePartnerSection />
       <FeaturesSection />
       <StatsSection />
-      <VideoSection />
       <SecuritySection />
       <div id="pricing"><EnterpriseSection /></div>
       <div id="contact"><CTASection /></div>
