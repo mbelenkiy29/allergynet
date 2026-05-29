@@ -26,7 +26,7 @@ const features = [
   {
     icon: ShieldCheck,
     title: "Validated in practice",
-    description: "We test and iterate our models in real-world scenarios to ensure Heidi remains accurate, reliable and clinically sound.",
+    description: "We test and iterate our programs in real-world clinical settings to ensure Nationwide Allergy remains accurate, reliable, and clinically sound.",
   },
   {
     icon: FileSearch,
@@ -70,10 +70,10 @@ export function SecuritySection() {
 
             {/* Learn More Button */}
             <Link
-              href="#"
+              href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full hover:bg-[#564841] transition-colors mb-12"
             >
-              Learn about Heidi's safety and security
+              Learn about our compliance & security
               <ArrowRight className="w-4 h-4" />
             </Link>
 

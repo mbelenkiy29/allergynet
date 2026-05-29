@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-export function HeidiRemoteSection() {
+export function WhyUsSection() {
   return (
     <section className="py-16 md:py-24">
       <div className="max-w-4xl mx-auto px-4 text-center">

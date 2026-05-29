@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
 import { PartnersMarquee } from "@/components/PartnersMarquee";
-import { HeidiRemoteSection } from "@/components/HeidiRemoteSection";
+import { WhyUsSection } from "@/components/WhyUsSection";
 import { CarePartnerSection } from "@/components/CarePartnerSection";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { StatsSection } from "@/components/StatsSection";
@@ -16,7 +16,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <PartnersMarquee />
-      <div id="why-us"><HeidiRemoteSection /></div>
+      <div id="why-us"><WhyUsSection /></div>
       <CarePartnerSection />
       <FeaturesSection />
       <StatsSection />
