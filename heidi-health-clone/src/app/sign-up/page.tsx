@@ -7,7 +7,7 @@ const perks = [
   "Turnkey setup — no equipment needed",
   "Expert support from our clinical team",
   "Flat-fee pricing, no long-term contracts",
-  "Serving providers in all 50 states",
+  "Serving providers nationwide",
 ];
 
 export default function SignUpPage() {

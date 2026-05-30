@@ -16,7 +16,7 @@ export function EnterpriseSection() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <h2 className="font-serif text-3xl md:text-4xl text-[#2a1d1f] mb-4 md:mb-0">
-            Chosen by Primary Care providers<br />for their patients across<br />all 50 states.
+            Chosen by Primary Care providers<br />for their patients<br />nationwide.
           </h2>
           <Link
             href="/contact"
