@@ -1,0 +1,76 @@
+SECTION 1 — Page Header / Intro
+Headline: Allergy Testing the Way You Need It
+Subhead: Advanced. Simple. Comprehensive.
+Intro paragraph:
+A single, simple blood test screens for a broad range of food and environmental allergens. The test measures how your immune system responds to specific substances, giving your provider the data they need to build an informed treatment plan.
+
+SECTION 2 — Key Facts (display as a row of stat cards or icon highlights)
+
+5 drops of blood
+46 environmental allergens screened
+60 food allergens screened
+5 business days for results from receipt of sample
+All commercial insurances, TRICARE, and Medicare accepted
+Free, fast 2-day shipping included
+Sign up online in under 5 minutes
+
+
+SECTION 3 — How the Test Works
+Heading: Understanding Your Results
+Body:
+This test helps your medical professional determine the risk that you may have an allergic sensitivity to something you eat, breathe in, or touch. It measures the amount of a substance called IgE in your body. Higher IgE levels indicate a greater chance of an allergic reaction.
+The test also measures a second substance called IgG4. IgG4 can change how your body reacts to allergy-causing substances by competing with IgE to neutralize allergic responses.
+Sub-heading: Blocking Potential
+Body:
+The competition between IgE and IgG4 is measured as Blocking Potential. A higher score means there is more potential for IgG4 to block IgE and prevent specific allergic reactions. Providers use this information alongside other clinical data, especially symptoms, to manage the effectiveness of allergy treatment.
+
+SECTION 4 — Result Classes (render as TWO side-by-side tables, color-coded)
+Table A — Allergen Specific IgE
+Color the Class cell: 0 = white/gray, 0.5 = pale yellow, 1 = yellow, 2 = olive/gold, 3 = light red, 4 = red, 5 = bright red (severity gradient).
+ClassDescriptionRange (IU/mL)0Negative<0.350.5Equivocal/Low0.35 – 0.701Low0.71 – 3.502Moderate3.51 – 17.503High17.51 – 50.04Very High50.01 – 100.05Extremely High>100.0
+Table B — Allergen Specific IgG4 (BP = Blocking Potential)
+Color the BP cell in a green gradient: 0 = white/gray, scaling up to 5 = dark green (more green = more blocking potential).
+BPDescriptionRange (mg/dL)0Negative<10.5Equivocal/Low1.0 – 2.001Low2.01 – 9.902Moderate9.91 – 753High75.10 – 99.994Very High100.0 – 199.995Extremely High>200
+
+SECTION 5 — What's Tested (display as grouped, collapsible categories or columns)
+Environmental Panel (46 allergens)
+Dust Mites: Mite Mix
+Molds: Alternaria Alternata, Cladosporium Herbarum, Cladosporium Sphaerospermum, Penicillium, Aspergillus Fumigatus
+Dander: Dog Epithelia, Cat Hair
+Weeds: Russian Thistle, Sagebrush, Dock/Sorrel Mix, Western Ragweed Mix, Firebush/Kochia, Baccharis, Marsh Elder/Burweed, Nettle, Pigweed (Rough/Redroot), English Plantain, Hackberry, Wingscale, Lambs Quarter, Cocklebur
+Trees: Maple/Box Elder, White Alder, Fremont Cottonwood, Elm, Red Mulberry, Red Cedar, California Sycamore Pollen, White Mulberry, Gambel Oak, Pecan, Acacia, California Black Walnut, Arroyo Willow, Palm, Ponderosa Pine, River Birch, Mesquite, Palo Verde, Red/Green Ash, Juniper
+Grasses: Grass Mix, Johnson Grass, Bermuda
+Insects: Cockroach
+Food Panel (60 allergens)
+Proteins / Milk: Beef, Chicken, Clam, Codfish, Crab, Egg White, Flounder, Lamb, Lobster, Cow Milk, Oyster, Pork, Salmon, Scallop, Shrimp, Tuna, Turkey
+Nuts / Seeds: Almond, Brazil Nut, Cashew Nut, Coconut, Hazelnut, Peanut, Sesame Seed, English Walnut
+Fruits: Peach, Apple, Banana, Blueberry, Cantaloupe, Cherry, Lemon, Orange, Raspberry, Strawberry, Tomato, Watermelon
+Vegetables / Misc: Green Bean, Broccoli, Carrot, Celery, Coffee, Garlic, Green Pea, Mushroom, Onion, Green Pepper, Sweet Potato, White Potato, Rye
+Grains / Legumes / Beans: Barley, Buckwheat, Chocolate, Corn, Hops, Malt, Lima Bean, Rice, Soybean, Whole Wheat
+
+SECTION 6 — Sample Collection (numbered steps, with a small "tip" callout)
+Heading: Dried Blood Spot Collection
+Subhead: A simple finger-prick protocol that saves your office time.
+
+Clearly label the collection card.
+Disinfect the fingertip with an alcohol pad.
+Prick the fingertip using a lancet/needle.
+Allow a full drop of blood to form, then wipe this first drop away with cotton.
+Collect the remaining drops onto the collection card. Collect 5 full drops. Each drop should fully form before it touches the filter paper.
+Hold cotton on the fingertip until bleeding stops.
+Allow the filter paper to fully dry before mailing.
+
+Shipping callout: Expedited shipping is included. Place the completed requisition, patient demographics, and dried sample in the provided mailer and send it back using the prepaid label.
+
+SECTION 7 — Billing & Sign-Up (closing band / CTA)
+Heading: No Patient Surprises
+Body: Compliant, transparent, and compassionate billing. All commercial insurances, TRICARE, and Medicare accepted. Testing is performed at a CLIA and COLA certified laboratory.
+CTA button: Sign Up Online — Under 5 Minutes
+CTA link: [registration page URL — replace with Nationwide Allergy's registration route]
+
+Build notes for the agent
+
+Make Section 4 tables responsive: stack vertically on mobile.
+Section 5 works well as an accordion or a 2-column grid (Environmental | Food).
+Do not include any third-party lab logos, addresses, phone numbers, or lab director names.
+Add a short disclaimer in the page footer: "Test results are not intended to be used as the sole source for clinical diagnosis. Treatment plans require a trained professional proficient in allergy management and immunotherapy. Medical necessity must be established prior to testing. This test has not been cleared or approved by the U.S. Food and Drug Administration."
