@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Check, ChevronDown } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, Shield } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AnimatedSection } from "@/components/AnimatedSection";
@@ -53,6 +53,12 @@ const foodAllergens: { category: string; items: string[] }[] = [
   { category: "Fruits", items: ["Peach", "Apple", "Banana", "Blueberry", "Cantaloupe", "Cherry", "Lemon", "Orange", "Raspberry", "Strawberry", "Tomato", "Watermelon"] },
   { category: "Vegetables / Misc", items: ["Green Bean", "Broccoli", "Carrot", "Celery", "Coffee", "Garlic", "Green Pea", "Mushroom", "Onion", "Green Pepper", "Sweet Potato", "White Potato", "Rye"] },
   { category: "Grains / Legumes / Beans", items: ["Barley", "Buckwheat", "Chocolate", "Corn", "Hops", "Malt", "Lima Bean", "Rice", "Soybean", "Whole Wheat"] },
+];
+
+const complianceBadges = [
+  "SOC 2", "GDPR", "Cyber Essentials Plus", "APP", "HIPAA",
+  "NZ Info Privacy", "ISO 9001", "ISO 42001", "UK Conformity",
+  "ISO 27001", "TX-RAMP", "DSGVO", "PIPEDA", "NHS", "PDPA",
 ];
 
 const collectionSteps = [
@@ -256,6 +262,46 @@ export default function LabBloodTestsPage() {
                 <p className="text-[#2a1d1f] text-sm leading-relaxed">
                   <strong>Expedited shipping included.</strong> Place the completed requisition, patient demographics, and dried sample in the provided mailer and send it back using the prepaid label.
                 </p>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Duty of Care */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-4">
+          <AnimatedSection animation="fade-up">
+            <div className="bg-[#f5f3ef] rounded-3xl p-8 md:p-12">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#2a1d1f] rounded-full text-xs text-[#faf8f4] mb-6">
+                <Shield className="w-3.5 h-3.5" />
+                Compliance & Standards
+              </div>
+              <h2 className="font-serif text-3xl md:text-4xl text-[#2a1d1f] mb-4">
+                Your duty of care, built in
+              </h2>
+              <p className="text-[#564841] mb-8 max-w-xl">
+                We hold ourselves to the highest standard there is: the one you set when you care for patients.
+              </p>
+              <div className="flex flex-wrap gap-3 mb-8">
+                {complianceBadges.map((badge) => (
+                  <div
+                    key={badge}
+                    className="flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-[#e8e5e0] hover:shadow-sm hover:border-[#2a1d1f] transition-all"
+                  >
+                    <Check className="w-4 h-4 text-green-600 shrink-0" />
+                    <span className="text-xs font-medium text-[#564841]">{badge}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full hover:bg-[#564841] transition-colors"
+                >
+                  Learn about our safety and protocols
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </AnimatedSection>
