@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, FileSearch, Lock, Check } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AnimatedSection } from "@/components/AnimatedSection";
@@ -24,26 +24,6 @@ const badges = [
   "PDPA",
 ];
 
-const features = [
-  {
-    icon: ShieldCheck,
-    title: "Validated in practice",
-    description:
-      "We test and iterate our programs in real-world clinical settings to ensure Nationwide Allergy remains accurate, reliable, and clinically sound.",
-  },
-  {
-    icon: FileSearch,
-    title: "Deep clinical review",
-    description:
-      "Our medical team reviews and refines outputs — adding the reliability automation alone can't provide.",
-  },
-  {
-    icon: Lock,
-    title: "Privacy, without shortcuts",
-    description:
-      "Our systems are built to the highest global standards, keeping every patient record secure, private, and protected.",
-  },
-];
 
 const labTests = [
   {
@@ -171,25 +151,6 @@ export default function LabBloodTestsPage() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
-              <div className="grid md:grid-cols-3 gap-4">
-                {features.map((feature, index) => (
-                  <AnimatedSection
-                    key={index}
-                    animation="fade-up"
-                    delay={index * 100}
-                  >
-                    <div className="p-6 bg-white rounded-2xl border border-[#e8e5e0] h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                      <feature.icon className="w-8 h-8 text-[#2a1d1f] mb-4" />
-                      <h3 className="font-serif text-lg text-[#2a1d1f] mb-2">
-                        {feature.title}
-                      </h3>
-                      <p className="text-sm text-[#564841]">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </AnimatedSection>
-                ))}
-              </div>
             </div>
           </AnimatedSection>
         </div>
