@@ -39,14 +39,12 @@ const footerSections = [
     title: "About Us",
     links: [
       { name: "Why Us", href: "/#why-us" },
-      { name: "Research", href: "/research" },
-      { name: "Contact Us", href: "/contact" },
+      { name: "Lab & Blood Tests", href: "/resources/lab-blood-tests" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { name: "Lab & Blood Tests", href: "/resources/lab-blood-tests" },
       { name: "FAQ", href: "/faq" },
       { name: "Research", href: "/research" },
       { name: "Contact Us", href: "/contact" },
