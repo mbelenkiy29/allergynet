@@ -53,7 +53,7 @@ export function EnterpriseSection() {
             </p>
             <div className="flex items-center justify-between">
               <Link
-                href="/our-services"
+                href="/contact"
                 className="inline-flex items-center gap-2 text-sm text-[#2a1d1f] hover:underline"
               >
                 Learn about our approach
