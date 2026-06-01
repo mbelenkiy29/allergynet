@@ -7,6 +7,11 @@ import { AnimatedSection } from "./AnimatedSection";
 
 
 const features = ["Screening", "Testing", "Treatment"];
+const featureLinks: Record<string, string> = {
+  "Screening": "/our-services#screening",
+  "Testing": "/our-services#testing",
+  "Treatment": "/our-services#treatment",
+};
 const featureDescriptions: Record<string, string> = {
   "Screening": "1 in 5 patients has allergies — don't let them leave without answers",
   "Testing": "Stop guessing. Know exactly what's triggering your patients' symptoms.",
@@ -72,9 +77,10 @@ export function HeroSection() {
         <AnimatedSection animation="fade-up" delay={100}>
           <div className="flex items-center justify-center gap-4 mb-6">
             {features.map((feature, index) => (
-              <span
+              <Link
                 key={feature}
-                className={`font-serif text-4xl md:text-6xl transition-all duration-500 cursor-pointer ${
+                href={featureLinks[feature]}
+                className={`font-serif text-4xl md:text-6xl transition-all duration-500 ${
                   index === activeFeature
                     ? "text-[#2a1d1f] scale-100"
                     : "text-[#c5beb8] scale-95 italic"
@@ -82,7 +88,7 @@ export function HeroSection() {
                 onClick={() => setActiveFeature(index)}
               >
                 {feature}
-              </span>
+              </Link>
             ))}
           </div>
         </AnimatedSection>
