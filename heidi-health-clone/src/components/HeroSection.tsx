@@ -166,7 +166,7 @@ export function HeroSection() {
         <AnimatedSection animation="fade-up" delay={400}>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
-              href="/sign-up"
+              href="/contact"
               className="px-6 py-3 text-sm font-medium text-[#2a1d1f] bg-[#f9f7a4] rounded-full border border-[#2a1d1f] hover:bg-[#f5f2a0] hover:shadow-md transition-all"
             >
               Start Today — It's Free

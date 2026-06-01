@@ -23,10 +23,10 @@ export function CarePartnerSection() {
             </h2>
             <div className="flex flex-wrap gap-3">
               <Link
-                href="#"
+                href="/contact"
                 className="px-5 py-2.5 text-sm font-medium text-[#2a1d1f] bg-[#f9f7a4] rounded-full border border-[#2a1d1f] hover:bg-[#f5f2a0] transition-colors"
               >
-                Sign Up Today
+                Contact Us
               </Link>
               <Link
                 href="#"

@@ -58,7 +58,7 @@ export function CTASection() {
                 Practices that add allergy services see increased patient satisfaction and a new revenue stream — with no long-term contracts and setup in under 10 minutes. Don't wait while your patients keep suffering.
               </p>
               <Link
-                href="/sign-up"
+                href="/contact"
                 className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full hover:bg-[#564841] hover:shadow-lg transition-all"
               >
                 <Plus className="w-4 h-4" />

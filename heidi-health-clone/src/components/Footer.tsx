@@ -41,8 +41,6 @@ const footerSections = [
       { name: "Why Us", href: "/#why-us" },
       { name: "Research", href: "/research" },
       { name: "Contact Us", href: "/contact" },
-      { name: "Sign Up", href: "/sign-up" },
-      { name: "Log In", href: "/login" },
     ],
   },
   {

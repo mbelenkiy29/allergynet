@@ -97,13 +97,7 @@ export default function OurServicesPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
-              href="#"
-              className="px-6 py-3 text-sm font-medium text-[#2a1d1f] bg-[#f9f7a4] rounded-full border border-[#2a1d1f] hover:bg-[#f5f2a0] transition-colors"
-            >
-              Sign Up Today
-            </Link>
-            <Link
-              href="#"
+              href="/contact"
               className="px-6 py-3 text-sm font-medium text-[#faf8f4] bg-[#2a1d1f] rounded-full hover:bg-[#564841] transition-colors"
             >
               Contact Us

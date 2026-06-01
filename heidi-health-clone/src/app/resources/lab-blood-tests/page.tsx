@@ -120,10 +120,10 @@ export default function LabBloodTestsPage() {
               A single, simple blood test screens for a broad range of food and environmental allergens. The test measures how your immune system responds to specific substances, giving your provider the data they need to build an informed treatment plan.
             </p>
             <Link
-              href="/sign-up"
+              href="/contact"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-[#2a1d1f] bg-[#f9f7a4] rounded-full hover:bg-[#f0ee8a] transition-colors"
             >
-              Sign Up Online — Under 5 Minutes
+              Contact Us to Get Started
               <ArrowRight className="w-4 h-4" />
             </Link>
           </AnimatedSection>
@@ -320,10 +320,10 @@ export default function LabBloodTestsPage() {
               Testing is performed at a CLIA and COLA certified laboratory.
             </p>
             <Link
-              href="/sign-up"
+              href="/contact"
               className="inline-flex items-center gap-2 px-8 py-4 text-sm font-medium text-[#2a1d1f] bg-[#f9f7a4] rounded-full hover:bg-[#f0ee8a] transition-colors"
             >
-              Sign Up Online — Under 5 Minutes
+              Contact Us to Get Started
               <ArrowRight className="w-4 h-4" />
             </Link>
           </AnimatedSection>
