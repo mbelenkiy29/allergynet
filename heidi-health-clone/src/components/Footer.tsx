@@ -63,7 +63,11 @@ const footerSections = [
 ];
 
 
-export function Footer() {
+export function Footer({ showAll = false }: { showAll?: boolean }) {
+  const sections = showAll
+    ? footerSections
+    : footerSections.filter((s) => s.title !== "Specialties" && s.title !== "Compliance");
+
   return (
     <footer className="bg-[#f5f3ef] py-16">
       <div className="max-w-6xl mx-auto px-4">
@@ -89,8 +93,8 @@ export function Footer() {
           </div>
 
           {/* Right Side - Links Grid */}
-          <div className="lg:w-3/4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
-            {footerSections.map((section) => (
+          <div className="lg:w-3/4 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+            {sections.map((section) => (
               <div key={section.title}>
                 <h3 className="font-semibold text-[#2a1d1f] mb-4">{section.title}</h3>
                 <ul className="space-y-2">

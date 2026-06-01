@@ -148,7 +148,7 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <Footer />
+      <Footer showAll={true} />
     </main>
   );
 }
