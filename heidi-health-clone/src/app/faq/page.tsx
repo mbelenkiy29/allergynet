@@ -133,7 +133,7 @@ export default function FAQPage() {
           <p className="text-[#564841] mb-6">Still have questions? We're happy to help.</p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link
-              href="/#contact"
+              href="/contact"
               className="px-6 py-3 text-sm font-medium text-[#2a1d1f] bg-[#f9f7a4] border border-[#2a1d1f] rounded-full hover:bg-[#f5f2a0] transition-colors"
             >
               Contact Us
