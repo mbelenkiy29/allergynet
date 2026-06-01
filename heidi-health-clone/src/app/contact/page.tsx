@@ -70,8 +70,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-xs font-medium text-[#88706a] uppercase tracking-widest mb-0.5">Phone</p>
-                  <a href="tel:18003514912" className="text-sm text-[#2a1d1f] hover:text-[#564841]">
-                    +1 800-351-4912
+                  <a href="tel:19297735011" className="text-sm text-[#2a1d1f] hover:text-[#564841]">
+                    929-773-5011
                   </a>
                 </div>
               </div>
@@ -82,8 +82,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-xs font-medium text-[#88706a] uppercase tracking-widest mb-0.5">Email</p>
-                  <a href="mailto:info@nationwideallergy.com" className="text-sm text-[#2a1d1f] hover:text-[#564841]">
-                    info@nationwideallergy.com
+                  <a href="mailto:partnerships@nationwideallergy.net" className="text-sm text-[#2a1d1f] hover:text-[#564841]">
+                    partnerships@nationwideallergy.net
                   </a>
                 </div>
               </div>
