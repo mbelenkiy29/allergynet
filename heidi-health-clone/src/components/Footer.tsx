@@ -1,9 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
-
-
 const footerSections = [
   {
     title: "Specialties",
@@ -67,13 +64,6 @@ const footerSections = [
   },
 ];
 
-const socialLinks = [
-  { name: "Facebook", icon: Facebook, href: "#" },
-  { name: "Instagram", icon: Instagram, href: "#" },
-  { name: "LinkedIn", icon: Linkedin, href: "#" },
-  { name: "X", icon: Twitter, href: "#" },
-  { name: "YouTube", icon: Youtube, href: "#" },
-];
 
 export function Footer() {
   return (
@@ -83,22 +73,6 @@ export function Footer() {
         <div className="flex flex-col lg:flex-row gap-12 mb-12">
           {/* Left Side */}
           <div className="lg:w-1/4">
-            {/* Social Links */}
-            <div className="flex gap-3 mb-6">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <Link
-                    key={social.name}
-                    href={social.href}
-                    className="w-8 h-8 flex items-center justify-center rounded-full bg-[#2a1d1f] hover:bg-[#564841] transition-colors"
-                    aria-label={social.name}
-                  >
-                    <Icon className="w-4 h-4 text-[#faf8f4]" />
-                  </Link>
-                );
-              })}
-            </div>
             <p className="text-sm text-[#564841] mb-2">Nationwide Allergy. By your side.</p>
             <p className="text-xs text-[#88706a]">© 2026 Nationwide Allergy. All rights reserved.</p>
 
