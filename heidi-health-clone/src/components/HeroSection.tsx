@@ -141,11 +141,8 @@ export function HeroSection() {
                   <span className="text-xs font-medium text-[#88706a]">Nationwide Allergy Guide</span>
                 </div>
                 <p className="text-sm text-[#2a1d1f] leading-relaxed">{searchResult}</p>
-                <div className="mt-3 pt-3 border-t border-[#e8e5e0] flex items-center justify-between">
+                <div className="mt-3 pt-3 border-t border-[#e8e5e0]">
                   <span className="text-xs text-[#88706a]">Based on clinical best practices</span>
-                  <button className="text-xs text-[#2a1d1f] font-medium hover:underline">
-                    Learn more
-                  </button>
                 </div>
               </div>
             </div>
