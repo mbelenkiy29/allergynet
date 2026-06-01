@@ -89,7 +89,7 @@ export function FeaturesSection() {
         <div className="text-center max-w-3xl mx-auto">
           <p className="text-lg text-[#564841] mb-6">{activeFeature.description}</p>
           <Link
-            href="#"
+            href={`/our-services#${activeFeature.id}`}
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-[#2a1d1f] bg-[#f9f7a4] rounded-full border border-[#2a1d1f] hover:bg-[#f5f2a0] transition-colors"
           >
             {activeFeature.cta}
