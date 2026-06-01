@@ -28,12 +28,6 @@ export function CarePartnerSection() {
               >
                 Contact Us
               </Link>
-              <Link
-                href="#"
-                className="px-5 py-2.5 text-sm font-medium text-[#2a1d1f] bg-white rounded-full border border-[#2a1d1f] hover:bg-[#f5f3ef] transition-colors"
-              >
-                Learn More
-              </Link>
             </div>
           </div>
 
