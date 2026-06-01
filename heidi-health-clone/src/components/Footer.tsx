@@ -49,7 +49,6 @@ const footerSections = [
       { name: "Lab & Blood Tests", href: "/resources/lab-blood-tests" },
       { name: "FAQ", href: "/faq" },
       { name: "Research", href: "/research" },
-      { name: "Guides", href: "/our-services" },
       { name: "Contact Us", href: "/contact" },
     ],
   },
