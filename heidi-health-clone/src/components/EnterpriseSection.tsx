@@ -73,13 +73,6 @@ export function EnterpriseSection() {
             <p className="font-serif text-2xl text-[#2a1d1f] mb-4">
               Say goodbye to allergies — for life
             </p>
-            <Link
-              href="/our-services"
-              className="inline-flex items-center gap-2 text-sm text-[#2a1d1f] hover:underline"
-            >
-              Read more
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
 
           <div className="bg-[#2a1d1f] rounded-2xl p-6">
