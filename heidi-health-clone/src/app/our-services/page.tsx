@@ -6,6 +6,7 @@ import { ClipboardList, Microscope, HeartPulse, Syringe, ShieldCheck, ArrowRight
 
 const steps = [
   {
+    id: "screening",
     number: "01",
     icon: ClipboardList,
     title: "Simple Screening Test",
@@ -23,6 +24,7 @@ const steps = [
     accent: "bg-sky-500",
   },
   {
+    id: "testing",
     number: "02",
     icon: Microscope,
     title: "Testing",
@@ -40,6 +42,7 @@ const steps = [
     accent: "bg-amber-500",
   },
   {
+    id: "results",
     number: "03",
     icon: HeartPulse,
     title: "Results",
@@ -57,6 +60,7 @@ const steps = [
     accent: "bg-emerald-500",
   },
   {
+    id: "treatment",
     number: "04",
     icon: Syringe,
     title: "Treatment",
@@ -117,7 +121,8 @@ export default function OurServicesPage() {
             return (
               <div
                 key={step.number}
-                className={`rounded-3xl overflow-hidden bg-gradient-to-br ${step.color} border border-white/60`}
+                id={step.id}
+                className={`rounded-3xl overflow-hidden bg-gradient-to-br ${step.color} border border-white/60 scroll-mt-24`}
               >
                 <div className={`grid md:grid-cols-2 gap-0 ${isEven ? "md:flex-row-reverse" : ""}`}>
                   {/* Icon / Number side */}
@@ -165,7 +170,7 @@ export default function OurServicesPage() {
       </section>
 
       {/* Better Immunity section */}
-      <section className="py-16 md:py-24 bg-[#2a1d1f] px-4">
+      <section id="immunity" className="py-16 md:py-24 bg-[#2a1d1f] px-4 scroll-mt-24">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
