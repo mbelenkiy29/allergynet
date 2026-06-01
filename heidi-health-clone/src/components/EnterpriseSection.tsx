@@ -76,13 +76,6 @@ export function EnterpriseSection() {
           </div>
 
           <div className="bg-[#2a1d1f] rounded-2xl p-6">
-            <Link
-              href="/our-services"
-              className="inline-flex items-center gap-2 text-sm text-[#faf8f4] hover:underline mb-8"
-            >
-              Learn more
-              <ArrowRight className="w-4 h-4" />
-            </Link>
             <div className="mb-4">
               <AllergyIcon />
             </div>
