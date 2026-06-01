@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X, Microscope, ClipboardList, HeartPulse, Syringe, HelpCircle, Newspaper, BookOpen, Users, Phone, FlaskConical } from "lucide-react";
+import { ChevronDown, Menu, X, Microscope, ClipboardList, HeartPulse, Syringe } from "lucide-react";
 
 const platformItems = [
   { name: "Screening", description: "Identify allergy candidates quickly", icon: ClipboardList, href: "/our-services#screening" },
@@ -11,30 +11,17 @@ const platformItems = [
   { name: "Immunity & Health", description: "Long-term patient wellness", icon: HeartPulse, href: "/our-services#immunity" },
 ];
 
-const resourceItems = [
-  { name: "Lab & Blood Tests", description: "Tests we use and why", icon: FlaskConical, href: "/resources/lab-blood-tests", external: false },
-  { name: "FAQ", description: "Common questions answered", icon: HelpCircle, href: "/faq", external: false },
-  { name: "Contact Us", description: "Speak with our team", icon: Phone, href: "/contact", external: false },
-];
-
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [platformOpen, setPlatformOpen] = useState(false);
-  const [resourcesOpen, setResourcesOpen] = useState(false);
 
   const platformRef = useRef<HTMLDivElement>(null);
-  const resourcesRef = useRef<HTMLDivElement>(null);
-
   const platformTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const resourcesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (platformRef.current && !platformRef.current.contains(event.target as Node)) {
         setPlatformOpen(false);
-      }
-      if (resourcesRef.current && !resourcesRef.current.contains(event.target as Node)) {
-        setResourcesOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
@@ -44,33 +31,17 @@ export function Header() {
   useEffect(() => {
     return () => {
       if (platformTimeoutRef.current) clearTimeout(platformTimeoutRef.current);
-      if (resourcesTimeoutRef.current) clearTimeout(resourcesTimeoutRef.current);
     };
   }, []);
 
   const handlePlatformEnter = () => {
     if (platformTimeoutRef.current) clearTimeout(platformTimeoutRef.current);
-    if (resourcesTimeoutRef.current) clearTimeout(resourcesTimeoutRef.current);
-    setResourcesOpen(false);
     setPlatformOpen(true);
   };
 
   const handlePlatformLeave = () => {
     platformTimeoutRef.current = setTimeout(() => {
       setPlatformOpen(false);
-    }, 150);
-  };
-
-  const handleResourcesEnter = () => {
-    if (resourcesTimeoutRef.current) clearTimeout(resourcesTimeoutRef.current);
-    if (platformTimeoutRef.current) clearTimeout(platformTimeoutRef.current);
-    setPlatformOpen(false);
-    setResourcesOpen(true);
-  };
-
-  const handleResourcesLeave = () => {
-    resourcesTimeoutRef.current = setTimeout(() => {
-      setResourcesOpen(false);
     }, 150);
   };
 
@@ -111,10 +82,7 @@ export function Header() {
                   </Link>
                   <button
                     className="flex items-center text-[#2a1d1f] hover:text-[#564841] transition-colors py-2 px-1"
-                    onClick={() => {
-                      setPlatformOpen(!platformOpen);
-                      setResourcesOpen(false);
-                    }}
+                    onClick={() => setPlatformOpen(!platformOpen)}
                   >
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${platformOpen ? "rotate-180" : ""}`} />
                   </button>
@@ -147,53 +115,8 @@ export function Header() {
                 </div>
               </div>
 
-              <div
-                className="relative"
-                ref={resourcesRef}
-                onMouseEnter={handleResourcesEnter}
-                onMouseLeave={handleResourcesLeave}
-              >
-                <button
-                  className="flex items-center gap-1 text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors py-2"
-                  onClick={() => {
-                    setResourcesOpen(!resourcesOpen);
-                    setPlatformOpen(false);
-                  }}
-                >
-                  Resources
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`} />
-                </button>
-
-                <div
-                  className={`absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-lg border border-[#e8e5e0] py-2 transition-all duration-200 origin-top ${
-                    resourcesOpen
-                      ? "opacity-100 scale-100 translate-y-0"
-                      : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
-                  }`}
-                >
-                  {resourceItems.map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="flex items-start gap-3 px-4 py-3 hover:bg-[#f5f3ef] transition-colors"
-                        onClick={() => setResourcesOpen(false)}
-                        {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                      >
-                        <Icon className="w-5 h-5 text-[#564841] mt-0.5" />
-                        <div>
-                          <div className="font-medium text-[#2a1d1f]">{item.name}</div>
-                          <div className="text-sm text-[#88706a]">{item.description}</div>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <Link href="/#why-us" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
-                Why Us
+              <Link href="/resources/lab-blood-tests" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
+                Lab &amp; Blood Tests
               </Link>
               <Link href="/research" className="text-sm text-[#2a1d1f] hover:text-[#564841] transition-colors">
                 Research
@@ -247,26 +170,7 @@ export function Header() {
                 })}
               </div>
 
-              <div className="border-b border-[#e8e5e0] pb-3">
-                <p className="text-xs font-semibold text-[#88706a] uppercase tracking-wide mb-2">Resources</p>
-                {resourceItems.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="flex items-center gap-3 py-2 text-[#2a1d1f] hover:text-[#564841]"
-                      onClick={() => setMobileMenuOpen(false)}
-                      {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    >
-                      <Icon className="w-4 h-4" />
-                      {item.name}
-                    </Link>
-                  );
-                })}
-              </div>
-
-              <Link href="/#why-us" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Why Us</Link>
+              <Link href="/resources/lab-blood-tests" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Lab &amp; Blood Tests</Link>
               <Link href="/research" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>Research</Link>
               <Link href="/faq" className="py-2 text-[#2a1d1f] hover:text-[#564841]" onClick={() => setMobileMenuOpen(false)}>FAQ</Link>
 
