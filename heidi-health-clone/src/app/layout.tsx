@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   title: "Nationwide Allergy | Precision Allergy Testing & Immunotherapy for Primary Care",
   description: "Nationwide Allergy brings precision allergy testing and immunotherapy to Primary Care providers. Simple flat-fee programs, no contracts, expert clinical support since 2013.",
   icons: {
-    icon: "https://ext.same-assets.com/1285281425/590722250.ico",
+    icon: "/favicon.ico",
+    apple: "/na-icon.png",
   },
 };
 
