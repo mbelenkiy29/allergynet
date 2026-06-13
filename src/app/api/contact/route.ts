@@ -12,7 +12,7 @@ type ContactRequest = {
 
 const DEFAULT_USESEND_API_URL = "https://app.usesend.com/api/v1/emails";
 const CONTACT_RECIPIENT_EMAIL = "partnerships@nationwideallergy.net";
-const DEFAULT_USESEND_FROM_EMAIL = "contact@allergynet.org";
+const DEFAULT_USESEND_FROM_EMAIL = "contact@nationwideallergy.org";
 
 function clean(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
