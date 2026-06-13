@@ -49,15 +49,49 @@ function line(label: string, value: string) {
   return value ? `${label}: ${value}` : `${label}: Not provided`;
 }
 
+function formatProviderValue(value: unknown, depth = 0): string {
+  if (depth > 4 || value == null) {
+    return "";
+  }
+
+  if (typeof value === "string") {
+    return value;
+  }
+
+  if (typeof value === "number" || typeof value === "boolean") {
+    return String(value);
+  }
+
+  if (Array.isArray(value)) {
+    return value
+      .map((item) => formatProviderValue(item, depth + 1))
+      .filter(Boolean)
+      .join("; ");
+  }
+
+  if (typeof value === "object") {
+    const record = value as Record<string, unknown>;
+    const parts = ["message", "error", "code", "reason", "details", "issues"]
+      .map((key) => formatProviderValue(record[key], depth + 1))
+      .filter(Boolean);
+
+    if (parts.length > 0) {
+      return Array.from(new Set(parts)).join(" - ");
+    }
+
+    try {
+      return JSON.stringify(value);
+    } catch {
+      return "";
+    }
+  }
+
+  return "";
+}
+
 function getProviderMessage(details: string) {
   try {
-    const parsed = JSON.parse(details) as {
-      error?: string;
-      message?: string;
-      code?: string;
-    };
-
-    return parsed.error ?? parsed.message ?? parsed.code ?? details;
+    return formatProviderValue(JSON.parse(details)) || details;
   } catch {
     return details;
   }
