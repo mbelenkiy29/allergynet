@@ -13,11 +13,28 @@ type ContactRequest = {
 const USESEND_API_URL =
   process.env.USESEND_API_URL ?? "https://app.usesend.com/api/v1/emails";
 const CONTACT_RECIPIENT_EMAIL = "partnerships@nationwideallergy.net";
-const USESEND_FROM_EMAIL =
-  process.env.USESEND_FROM_EMAIL ?? CONTACT_RECIPIENT_EMAIL;
 
 function clean(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
+}
+
+function stripWrappingQuotes(value: string) {
+  const trimmed = value.trim();
+
+  if (
+    (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
+    (trimmed.startsWith("'") && trimmed.endsWith("'"))
+  ) {
+    return trimmed.slice(1, -1).trim();
+  }
+
+  return trimmed;
+}
+
+function normalizeEmailAddress(value: string) {
+  const withoutQuotes = stripWrappingQuotes(value);
+  const bracketMatch = withoutQuotes.match(/<([^<>]+)>/);
+  return (bracketMatch?.[1] ?? withoutQuotes).trim().toLowerCase();
 }
 
 function escapeHtml(value: string) {
@@ -79,10 +96,23 @@ export async function POST(request: Request) {
     );
   }
 
-  if (!process.env.USESEND_API_KEY) {
+  const usesendApiKey = stripWrappingQuotes(process.env.USESEND_API_KEY ?? "");
+  const fromEmail = normalizeEmailAddress(
+    process.env.USESEND_FROM_EMAIL ?? CONTACT_RECIPIENT_EMAIL,
+  );
+
+  if (!usesendApiKey) {
     console.error("Missing USESEND_API_KEY environment variable.");
     return NextResponse.json(
       { error: "Contact form is not configured yet." },
+      { status: 500 },
+    );
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fromEmail)) {
+    console.error("Invalid USESEND_FROM_EMAIL environment variable.");
+    return NextResponse.json(
+      { error: "Contact form sender is not configured correctly." },
       { status: 500 },
     );
   }
@@ -139,12 +169,12 @@ export async function POST(request: Request) {
   const response = await fetch(USESEND_API_URL, {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${process.env.USESEND_API_KEY}`,
+      Authorization: `Bearer ${usesendApiKey}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
       to: CONTACT_RECIPIENT_EMAIL,
-      from: USESEND_FROM_EMAIL,
+      from: fromEmail,
       subject,
       replyTo: contact.email,
       text,
