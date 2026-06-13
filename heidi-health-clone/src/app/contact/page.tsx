@@ -8,6 +8,8 @@ import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -22,9 +24,32 @@ export default function ContactPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(result.error || "We could not send your message. Please try again.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "We could not send your message. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -120,7 +145,7 @@ export default function ContactPage() {
                   Thanks for reaching out. A member of our team will get back to you within one business day.
                 </p>
                 <button
-                  onClick={() => { setSubmitted(false); setForm({ firstName: "", lastName: "", email: "", phone: "", practiceName: "", role: "", message: "" }); }}
+                  onClick={() => { setSubmitted(false); setError(""); setForm({ firstName: "", lastName: "", email: "", phone: "", practiceName: "", role: "", message: "" }); }}
                   className="px-5 py-2.5 text-sm font-medium text-[#2a1d1f] bg-[#f9f7a4] border border-[#2a1d1f] rounded-full hover:bg-[#f5f2a0] transition-colors"
                 >
                   Send another message
@@ -227,11 +252,18 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#2a1d1f] hover:bg-[#564841] text-[#faf8f4] text-sm font-medium rounded-full transition-colors"
+                  disabled={submitting}
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#2a1d1f] hover:bg-[#564841] text-[#faf8f4] text-sm font-medium rounded-full transition-colors disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   <Send className="w-4 h-4" />
-                  Send message
+                  {submitting ? "Sending..." : "Send message"}
                 </button>
+
+                {error ? (
+                  <p className="text-sm text-red-600 text-center" role="alert">
+                    {error}
+                  </p>
+                ) : null}
 
                 <p className="text-xs text-[#88706a] text-center">
                   By submitting this form you agree to be contacted by a Nationwide Allergy representative.
