@@ -10,8 +10,7 @@ type ContactRequest = {
   message?: string;
 };
 
-const USESEND_API_URL =
-  process.env.USESEND_API_URL ?? "https://app.usesend.com/api/v1/emails";
+const DEFAULT_USESEND_API_URL = "https://app.usesend.com/api/v1/emails";
 const CONTACT_RECIPIENT_EMAIL = "partnerships@nationwideallergy.net";
 
 function clean(value: unknown) {
@@ -48,6 +47,20 @@ function escapeHtml(value: string) {
 
 function line(label: string, value: string) {
   return value ? `${label}: ${value}` : `${label}: Not provided`;
+}
+
+function getProviderMessage(details: string) {
+  try {
+    const parsed = JSON.parse(details) as {
+      error?: string;
+      message?: string;
+      code?: string;
+    };
+
+    return parsed.error ?? parsed.message ?? parsed.code ?? details;
+  } catch {
+    return details;
+  }
 }
 
 export async function POST(request: Request) {
@@ -97,6 +110,9 @@ export async function POST(request: Request) {
   }
 
   const usesendApiKey = stripWrappingQuotes(process.env.USESEND_API_KEY ?? "");
+  const usesendApiUrl = stripWrappingQuotes(
+    process.env.USESEND_API_URL ?? DEFAULT_USESEND_API_URL,
+  );
   const fromEmail = normalizeEmailAddress(
     process.env.USESEND_FROM_EMAIL ?? CONTACT_RECIPIENT_EMAIL,
   );
@@ -105,6 +121,16 @@ export async function POST(request: Request) {
     console.error("Missing USESEND_API_KEY environment variable.");
     return NextResponse.json(
       { error: "Contact form is not configured yet." },
+      { status: 500 },
+    );
+  }
+
+  try {
+    new URL(usesendApiUrl);
+  } catch {
+    console.error("Invalid USESEND_API_URL environment variable.");
+    return NextResponse.json(
+      { error: "Contact form email service URL is not configured correctly." },
       { status: 500 },
     );
   }
@@ -166,31 +192,42 @@ export async function POST(request: Request) {
     </div>
   `;
 
-  const response = await fetch(USESEND_API_URL, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${usesendApiKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      to: CONTACT_RECIPIENT_EMAIL,
-      from: fromEmail,
-      subject,
-      replyTo: contact.email,
-      text,
-      html,
+  let response: Response;
+
+  try {
+    response = await fetch(usesendApiUrl, {
+      method: "POST",
       headers: {
-        "X-Website-Form": "nationwide-allergy-contact",
+        Authorization: `Bearer ${usesendApiKey}`,
+        "Content-Type": "application/json",
       },
-    }),
-  });
+      body: JSON.stringify({
+        to: CONTACT_RECIPIENT_EMAIL,
+        from: fromEmail,
+        subject,
+        replyTo: contact.email,
+        text,
+        html,
+      }),
+    });
+  } catch (err) {
+    console.error("Usesend contact email request failed:", err);
+
+    return NextResponse.json(
+      { error: "We could not reach the email service. Please try again." },
+      { status: 502 },
+    );
+  }
 
   if (!response.ok) {
     const details = await response.text();
+    const providerMessage = getProviderMessage(details);
     console.error("Usesend contact email failed:", response.status, details);
 
     return NextResponse.json(
-      { error: "We could not send your message. Please try again." },
+      {
+        error: `Email service rejected the message: ${providerMessage || `HTTP ${response.status}`}`,
+      },
       { status: 502 },
     );
   }
