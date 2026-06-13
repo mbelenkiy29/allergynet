@@ -12,6 +12,7 @@ type ContactRequest = {
 
 const DEFAULT_USESEND_API_URL = "https://app.usesend.com/api/v1/emails";
 const CONTACT_RECIPIENT_EMAIL = "partnerships@nationwideallergy.net";
+const DEFAULT_USESEND_FROM_EMAIL = "contact@allergynet.org";
 
 function clean(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
@@ -148,7 +149,7 @@ export async function POST(request: Request) {
     process.env.USESEND_API_URL ?? DEFAULT_USESEND_API_URL,
   );
   const fromEmail = normalizeEmailAddress(
-    process.env.USESEND_FROM_EMAIL ?? CONTACT_RECIPIENT_EMAIL,
+    process.env.USESEND_FROM_EMAIL ?? DEFAULT_USESEND_FROM_EMAIL,
   );
 
   if (!usesendApiKey) {
