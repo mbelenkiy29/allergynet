@@ -1,7 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
-  "installCommand": "npm --prefix heidi-health-clone ci",
-  "buildCommand": "npm --prefix heidi-health-clone run build",
-  "outputDirectory": "heidi-health-clone/.next"
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build"
 }
