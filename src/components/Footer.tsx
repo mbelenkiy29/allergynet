@@ -110,6 +110,21 @@ export function Footer({ showAll = false }: { showAll?: boolean }) {
             ))}
           </div>
         </div>
+
+        {/* Sentinel Tech credit */}
+        <div className="border-t border-[#e8e5e0] pt-6">
+          <p className="text-center text-xs text-[#88706a]">
+            Website managed by{" "}
+            <a
+              href="https://sentineltechsolutions.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#564841] hover:text-[#2a1d1f] transition-colors underline underline-offset-2"
+            >
+              Sentinel Tech Solutions LLC
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
